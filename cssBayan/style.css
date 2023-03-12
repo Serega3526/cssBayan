@@ -14,9 +14,10 @@ h2{
     justify-content: space-between;
 }
 .accordion__mem{
+    text-align: center;
     overflow: hidden;
     opacity: 0;
-    transition: all 1s ease-in;
+    transition: all 0.5s ease-in;
     max-height: 0;
     cursor: pointer;
 }
@@ -25,16 +26,18 @@ h2{
     width: 100%;
 }
 .accordion__open{
-    width: 6%;
+    width: 30px;
     opacity: 0;
+    background-size: 1.5rem;
     background-image: url('/cssBayan/img/open.png');
     background-repeat: no-repeat;
     transition: all 0.5s ease-in;
 }
 .accordion__close{
-    width: 20px;
+    width: 30px;
     background-image: url(./img/close.png);
     background-repeat: no-repeat;
+    background-size: 1.5rem;
 }
 input:checked ~ .accordion__mem {
     opacity: 1;
@@ -59,7 +62,7 @@ input:checked ~ .accordion__mem {
         opacity: 1;
     }
     .accordion__item input:hover  + h2 .accordion__open{
-        background-image: url('/cssBayan/img/open.png');
+        background-image: url('/cssBayan/img/close.png');
         transition: all 0.5s ease-in;
     }
 }
