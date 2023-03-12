@@ -3,7 +3,15 @@
     margin: 0 auto;
 }
 .accordion__item{
+    flex-direction: column;
+    display: flex;
+    cursor: pointer;
     border-top: 1px solid black;
+}
+h2{
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
 }
 .accordion__mem{
     overflow: hidden;
@@ -16,10 +24,30 @@
     display: block;
     width: 100%;
 }
+.accordion__open{
+    width: 6%;
+    opacity: 0;
+    background-image: url('/cssBayan/img/open.png');
+    background-repeat: no-repeat;
+    transition: all 0.5s ease-in;
+}
+.accordion__close{
+    width: 20px;
+    background-image: url(./img/close.png);
+    background-repeat: no-repeat;
+}
 input:checked ~ .accordion__mem {
     opacity: 1;
     max-height: 100%;
     transition: all 1s ease-in;
+}
+.accordion__items:active .accordion__item h2 .accordion__open  {
+    background-image: url('/cssBayan/img/close.png');
+    transition: all 0.5s ease-in;
+}
+.accordion__item input:checked  + h2 .accordion__open {
+    background-image: url('/cssBayan/img/close.png');
+    transition: all 0.5s ease-in;
 }
 @media (hover: hover){
     .accordion__item input:hover ~ .accordion__mem {
@@ -27,6 +55,13 @@ input:checked ~ .accordion__mem {
         max-height: 100%;
         transition: all 0.5s ease-in;
     } 
+    .accordion__items:hover  h2 .accordion__open {
+        opacity: 1;
+    }
+    .accordion__item input:hover  + h2 .accordion__open{
+        background-image: url('/cssBayan/img/open.png');
+        transition: all 0.5s ease-in;
+    }
 }
 img{
     width: 300px;
